@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Navbar } from "./components/dashboard/nav";
 import { SearchBox } from "./components/dashboard/searchbox";
+import { EmployeesChart } from "./components/dashboard/employees-chart";
+import { AttendanceCard } from "./components/dashboard/attendance-card";
 
 const tabs = [
   "Overview",
@@ -24,6 +26,7 @@ function App() {
       <main>
         <Navbar />
 
+        {/* tabs */}
         <div className="border-b my-3">
           <div className="w-[90%] overflow-y-scroll lg:overflow-y-hidden  flex justify-between items-end mx-auto text-sm ">
             {tabs.map((tab, index) => (
@@ -43,6 +46,17 @@ function App() {
         <div>
           <div className="w-[90%] lg:w-[70%] mx-auto ">
             <SearchBox />
+
+            <div className="flex space-x-10 mt-5">
+                {/* Left Container */}
+              <div className="flex-1 space-y-6">
+                <EmployeesChart />
+                <AttendanceCard />
+              </div>
+              <div className="flex-[1.5] ">
+
+              </div>
+            </div>
           </div>
         </div>
 
