@@ -1,42 +1,49 @@
-import { Bell, ChevronDown, Home } from "lucide-react";
+import { Bell, ChevronDown, Home, MenuIcon } from "lucide-react";
 import React from "react";
 import { Separator } from "../ui/separator";
 
 export const Navbar = () => {
   return (
-    <div className="py-3">
+    <div className="py-3 border-b">
       <div className="w-[90%] mx-auto flex justify-between items-center">
         <div className="flex space-x-4 items-center">
           <img src="/image 2.png" alt="" />
-          <div className="flex items-center text-smspace-x-1.5 bg-[#f1f1f1] ">
-            <span>&#x25;</span>
-            <span>People</span>
-            <ChevronDown />
+          <div className="flex items-center cursor-pointer hover:opacity-90 transition-opacity ease-linear duration-300 text-xs font-medium space-x-1.5 rounded-lg py-1 px-3 bg-[#f1f1f1] ">
+            <div className=" text-[#2faad0] text-xs p-1 bg-[#ccf3ff] flex justify-center items-center h-4 w-4 ">
+                <span>&#x25;</span>
+            </div>
+            <span className="text-[#878787] ">People</span>
+            <ChevronDown className="h-4 w-4" color="#878787" />
           </div>
-
-          <div></div>
         </div>
 
-        <div className="flex items-center space-x-5">
-          <div>
-            <Home />
+        <div className="hidden lg:flex items-center space-x-10">
+          <div className="cursor-pointer">
+            <img className="w-8 h-6 object-contain " src="/Union.png" alt="" />
           </div>
 
-          <div>
-            <img src="/Frame 30.png" alt="" />
+          <div className="cursor-pointer">
+            <img className="w-8 h-6 object-contain " src="/Frame 30.png" alt="" />
           </div>
 
-          <div>i</div>
 
-          <div>
-            <Bell />
+          <div className="cursor-pointer">
+            <img className="w-8 h-6 object-contain " src="Vector.png" alt="" />
           </div>
 
-          <Separator orientation="vertical" />
-
-          <div>
-            <span>W</span>
+          <div className="cursor-pointer">
+            <img className="w-8 h-6 object-contain " src="Group 9463.png" alt="" />
           </div>
+
+          <div className="h-[25px] w-[1px] bg-black/25 " />
+
+          <div className="cursor-pointer">
+            <img className="w-8 h-6 object-contain " src="/Group 1547.png" alt="" />
+          </div>
+        </div>
+
+        <div className="lg:hidden">
+            <MenuIcon />
         </div>
       </div>
     </div>
