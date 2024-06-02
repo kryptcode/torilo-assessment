@@ -3,6 +3,7 @@ import { Navbar } from "./components/dashboard/nav";
 import { SearchBox } from "./components/dashboard/searchbox";
 import { EmployeesChart } from "./components/dashboard/employees-chart";
 import { AttendanceCard } from "./components/dashboard/attendance-card";
+import { CelebrationsCard } from "./components/dashboard/celebrations-card";
 
 const tabs = [
   "Overview",
@@ -47,11 +48,14 @@ function App() {
           <div className="w-[90%] lg:w-[70%] mx-auto ">
             <SearchBox />
 
-            <div className="flex space-x-10 mt-5">
+            <div className="flex flex-col lg:flex-row space-y-10 space-y-0 lg:space-x-10 mt-5">
                 {/* Left Container */}
               <div className="flex-1 space-y-6">
                 <EmployeesChart />
                 <AttendanceCard />
+                <CelebrationsCard />
+
+                <div></div>
               </div>
               <div className="flex-[1.5] ">
 

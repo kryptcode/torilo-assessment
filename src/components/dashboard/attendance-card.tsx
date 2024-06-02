@@ -12,7 +12,7 @@ export const AttendanceCard = () => {
             <div className='w-full rounded-l-md absolute top-0 left-0 bottom-0 bg-[#fce2af] rounded-r-md' />
         </div>
 
-        <div className='flex justify-center items-center space-x-4'>
+        <div className='flex justify-center items-center border-b pb-4 space-x-4 mb-2'>
             <div className='text-xs font-medium flex space-x-1.5 items-center'>
                 <div className='h-4 w-4 bg-[#c2d4ff] rounded-sm ' />
                 <span>Present</span>
@@ -25,6 +25,10 @@ export const AttendanceCard = () => {
                 <div className='h-4 w-4 bg-[#fce2af] rounded-sm ' />
                 <span>Out of Work</span>
             </div>
+        </div>
+
+        <div className='text-center'>
+            <a href="#" className='text-[#2898a4]  hover:underline text-xs font-medium'>View in Time & Attendance</a>
         </div>
     </div>
   )
