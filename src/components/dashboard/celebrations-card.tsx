@@ -1,5 +1,5 @@
 import { Cake } from "lucide-react";
-import React, { useState } from "react";
+import { useState } from "react";
 
 export const CelebrationsCard = () => {
   const [activeTab, setActiveTab] = useState("birthdays");

@@ -1,5 +1,5 @@
 import { ChevronDown } from "lucide-react";
-import React, { useEffect, useRef, useState } from "react";
+import {  useState } from "react";
 
 import {
   DropdownMenu,
@@ -22,8 +22,8 @@ const items = [
 ];
 
 export const SearchBox = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const dropdownRef = useRef<HTMLDivElement>(null);
   const [query, setQuery] = useState<string>("");
   const [filteredItems, setFilteredItems] = useState<any>([]);
 
@@ -37,25 +37,25 @@ export const SearchBox = () => {
     );
   };
 
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
+  // const toggleDropdown = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleClickOutside = (event: MouseEvent) => {
+  //     if (
+  //       dropdownRef.current &&
+  //       !dropdownRef.current.contains(event.target as Node)
+  //     ) {
+  //       setIsOpen(false);
+  //     }
+  //   };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  //   document.addEventListener("mousedown", handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener("mousedown", handleClickOutside);
+  //   };
+  // }, []);
 
   return (
     <div className="flex justify-between items-center">

@@ -1,6 +1,4 @@
-import { Bell, ChevronDown, Home, MenuIcon } from "lucide-react";
-import React from "react";
-import { Separator } from "../ui/separator";
+import { ChevronDown, MenuIcon } from "lucide-react";
 
 export const Navbar = () => {
   return (
