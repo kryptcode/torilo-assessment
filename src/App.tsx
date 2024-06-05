@@ -84,6 +84,9 @@ function App() {
             <Skeleton className="w-full h-[250px] mb-3 rounded-xl" />
           </div>
         )}
+
+        <div className="py-12">
+        </div>
       </main>
     </>
   );
