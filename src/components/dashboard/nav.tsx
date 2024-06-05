@@ -1,4 +1,4 @@
-import { ChevronDown, MenuIcon } from "lucide-react";
+import { Bell, ChevronDown, Grid2X2, Home, MenuIcon } from "lucide-react";
 
 export const Navbar = () => {
   return (
@@ -17,11 +17,13 @@ export const Navbar = () => {
 
         <div className="hidden lg:flex items-center space-x-10">
           <div className="cursor-pointer">
-            <img className="w-8 h-6 object-contain " src="/Union.png" alt="" />
+            {/* <img className="w-8 h-6 object-contain " src="/Union.png" alt="" /> */}
+            <Home className="opacity-90 " />
           </div>
 
           <div className="cursor-pointer">
-            <img className="w-8 h-6 object-contain " src="/Frame 30.png" alt="" />
+            {/* <img className="w-8 h-6 object-contain " src="/Frame 30.png" alt="" /> */}
+            <Grid2X2 className="text-[#2898a4]" />
           </div>
 
 
@@ -30,7 +32,7 @@ export const Navbar = () => {
           </div>
 
           <div className="cursor-pointer">
-            <img className="w-8 h-6 object-contain " src="Group 9463.png" alt="" />
+            <Bell />
           </div>
 
           <div className="h-[25px] w-[1px] bg-black/25 " />

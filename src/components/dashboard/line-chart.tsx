@@ -63,7 +63,7 @@ export const LineChart = () => {
 
   return (
     <div className="bg-white shadow-md border p-3  rounded-lg">
-      <div className=" mb-4 bg-[#f2f2f2] border p-1.5 px-2 items-center font-medium justify-between rounded-xl inline-flex space-x-4 ">
+      <div className=" mb-4 bg-[#f2f2f2] border p-1.5 text-sm px-2 items-center font-medium justify-between rounded-xl inline-flex space-x-4 ">
         <div
           className={`${
             activeTab === "birthdays"

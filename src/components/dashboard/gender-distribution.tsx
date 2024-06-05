@@ -49,7 +49,7 @@ export const GenderDistribution = () => {
         },
       },
     },
-    cutout: "40%",
+    cutout: "60%",
   };
   return (
     <div className="bg-white shadow-md border p-3  rounded-lg">
@@ -62,9 +62,10 @@ export const GenderDistribution = () => {
       <div className="relative lg:w-[18rem] lg:h-[18rem]   ">
         <Doughnut data={data} options={options} />
         <div
-          className="absolute left-1/2 top-1/2  -translate-x-1/2  -translate-y-[70%] text-center"
+          className="absolute left-1/2 top-1/2  lg:-translate-x-1/2 -translate-x-1/2  -translate-y-[100%] lg:-translate-y-[100%] text-center"
         >
-          <h2>36</h2>
+          <h2 className="text-lg font-medium">36</h2>
+          <p className=" text-[#878787]">People</p>
         </div>
       </div>
     </div>

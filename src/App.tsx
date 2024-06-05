@@ -8,6 +8,7 @@ import { Leave } from "./components/dashboard/leave";
 import BarChart from "./components/dashboard/bar-chart.tsx";
 import { LineChart } from "./components/dashboard/line-chart.tsx";
 import { GenderDistribution } from "./components/dashboard/gender-distribution.tsx";
+import { Skeleton } from "./components/ui/skeleton.tsx";
 
 const tabs = [
   "Overview",
@@ -36,9 +37,11 @@ function App() {
           <div className="w-[90%] overflow-y-scroll lg:overflow-y-hidden  flex justify-between items-end mx-auto text-sm ">
             {tabs.map((tab, index) => (
               <div
-                className={
-                  `${activeTab === tab.toLowerCase() ? "border-[#2898a4] bg-[#eaf8fa] text-[#2898a4] font-medium" : "text-[#545454]"} group hover:bg-[#eaf8fa] hover:font-medium border-b-2 border-transparent hover:border-[#2898a4]  cursor-pointer transition-all ease-in-out duration-300  rounded-t-lg hover:text-[#2898a4] `
-                }
+                className={`${
+                  activeTab === tab.toLowerCase()
+                    ? "border-[#2898a4] bg-[#eaf8fa] text-[#2898a4] font-medium"
+                    : "text-[#545454]"
+                } group hover:bg-[#eaf8fa] hover:font-medium border-b-2 border-transparent hover:border-[#2898a4]  cursor-pointer transition-all ease-in-out duration-300  rounded-t-lg hover:text-[#2898a4] `}
                 key={index}
                 onClick={() => setActiveTab(tab.toLowerCase())}
               >
@@ -48,32 +51,39 @@ function App() {
           </div>
         </div>
 
-        <div>
-          <div className="w-[90%] lg:w-[75%] mx-auto ">
-            <SearchBox />
+        {activeTab === "overview" ? (
+          <div>
+            <div className="w-[90%] lg:w-[75%] mx-auto ">
+              <SearchBox />
 
-            <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:space-x-10 mt-5">
+              <div className="flex flex-col lg:flex-row space-y-10 lg:space-y-0 lg:space-x-10 mt-5">
                 {/* Left Container */}
-              <div className="flex-1 space-y-6">
-                <EmployeesChart />
-                <AttendanceCard />
-                <CelebrationsCard />
-                <GenderDistribution />
+                <div className="flex-1 space-y-6">
+                  <EmployeesChart />
+                  <AttendanceCard />
+                  <CelebrationsCard />
+                  <GenderDistribution />
 
-                <div></div>
-              </div>
+                  <div></div>
+                </div>
 
-              <div className="flex-[2] space-y-6 ">
-                <Leave />
-                <BarChart />
-                <LineChart />
-                <div></div>
+                <div className="flex-[2] space-y-6 ">
+                  <Leave />
+                  <BarChart />
+                  <LineChart />
+                  <div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-
+        ) : (
+          <div className="w-[70%] mx-auto ">
+            <Skeleton className="w-[80px] h-[40px] mb-3 rounded-xl" />
+            <Skeleton className="w-full h-[20px] mb-3 rounded-xl" />
+            <Skeleton className="w-full h-[70px] mb-3 rounded-xl" />
+            <Skeleton className="w-full h-[250px] mb-3 rounded-xl" />
+          </div>
+        )}
       </main>
     </>
   );
