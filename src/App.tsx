@@ -5,6 +5,9 @@ import { EmployeesChart } from "./components/dashboard/employees-chart";
 import { AttendanceCard } from "./components/dashboard/attendance-card";
 import { CelebrationsCard } from "./components/dashboard/celebrations-card";
 import { Leave } from "./components/dashboard/leave";
+import BarChart from "./components/dashboard/bar-chart.tsx";
+import { LineChart } from "./components/dashboard/line-chart.tsx";
+import { GenderDistribution } from "./components/dashboard/gender-distribution.tsx";
 
 const tabs = [
   "Overview",
@@ -55,12 +58,16 @@ function App() {
                 <EmployeesChart />
                 <AttendanceCard />
                 <CelebrationsCard />
+                <GenderDistribution />
 
                 <div></div>
               </div>
 
-              <div className="flex-[2] ">
+              <div className="flex-[2] space-y-6 ">
                 <Leave />
+                <BarChart />
+                <LineChart />
+                <div></div>
               </div>
             </div>
           </div>

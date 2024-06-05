@@ -1,47 +1,41 @@
 import { useState } from "react";
-import { Bar } from "react-chartjs-2";
+import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
   CategoryScale,
   LinearScale,
-  BarElement,
+  LineElement,
   Title,
   Tooltip,
   Legend,
-} from "chart.js";
+  PointElement,
+} from 'chart.js';
 import { Skeleton } from "../ui/skeleton";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+ChartJS.register(CategoryScale, LinearScale, LineElement, Title, Tooltip, Legend, PointElement);
 
-const BarChart = () => {
+
+export const LineChart = () => {
   const [activeTab, setActiveTab] = useState("birthdays");
 
   const data = {
-    labels: [
-      "Tech",
-      "Admin",
-      "Customer Support",
-      "Operations",
-      "Frontdesk",
-      "Backend",
-    ],
+    labels: ['Tech', 'Admin', 'Customer Support', 'Operations', 'Frontdesk', 'Logistics'],
     datasets: [
       {
-        label: "Male",
-        data: [0, 0, 7, 2, 0, 1],
-        backgroundColor: "rgba(54, 162, 235, 0.5)",
+        label: 'Male',
+        data: [30, 10, 5, 15, 10, 0],
+        borderColor: 'rgba(54, 162, 235, 0.7)',
+        backgroundColor: 'rgba(54, 162, 235, 0.3)',
+        fill: false,
+        tension: 0.4,
       },
       {
-        label: "Female",
-        data: [0, 0, 0, 1, 10, 1],
-        backgroundColor: "rgba(255, 206, 86, 0.5)",
+        label: 'Female',
+        data: [25, 5, 0, 10, 15, 5],
+        borderColor: 'rgba(255, 99, 132, 0.7)',
+        backgroundColor: 'rgba(255, 99, 132, 0.3)',
+        fill: false,
+        tension: 0.4,
       },
     ],
   };
@@ -50,18 +44,18 @@ const BarChart = () => {
     responsive: true,
     plugins: {
       legend: {
-        position: "top",
+        position: 'top' as const,
       },
       title: {
         display: true,
-        text: "Staff Distribution by Department and Gender",
+        text: 'Staff Distribution by Department and Gender',
       },
     },
     scales: {
       y: {
         beginAtZero: true,
         ticks: {
-          stepSize: 2,
+          stepSize: 10,
         },
       },
     },
@@ -69,7 +63,7 @@ const BarChart = () => {
 
   return (
     <div className="bg-white shadow-md border p-3  rounded-lg">
-      <div className=" mb-4 bg-[#f2f2f2] border p-1.5 px-2 items-center font-medium justify-between rounded-xl inline-flex space-x-4 text-sm ">
+      <div className=" mb-4 bg-[#f2f2f2] border p-1.5 px-2 items-center font-medium justify-between rounded-xl inline-flex space-x-4 ">
         <div
           className={`${
             activeTab === "birthdays"
@@ -92,11 +86,11 @@ const BarChart = () => {
         </div>
       </div>
 
-      <div className="mb-4"></div>
+      <div className="mb-3"></div>
 
       {activeTab === "birthdays" ? (
         <div className="mt-5">
-          <Bar data={data} options={options} />
+          <Line data={data} options={options} />
         </div>
       ) : (
         <div>
@@ -106,7 +100,5 @@ const BarChart = () => {
         </div>
       )}
     </div>
-  );
-};
-
-export default BarChart;
+  )
+}
